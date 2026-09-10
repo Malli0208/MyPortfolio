@@ -8,17 +8,14 @@
 /* BODY */
 body {
   background: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin: 0;
 }
 
 /* WRAPPER (A4 LOOK) */
 .wrapper {
   width: 100%;
   max-width: 420px;
-  height: 600px;
+  height: 100vh;
   margin: auto;
   overflow: hidden;
   position: relative;
@@ -28,15 +25,15 @@ body {
 /* SLIDER CONTAINER */
 .container {
   display: flex;
-  width: 600%; /* 6 pages */
+  width: 100%; /* 6 pages */
   height: 100%;
   transition: transform 0.6s ease;
 }
 
 /* EACH PAGE */
 .page {
-  width: 420px;   /* IMPORTANT - fixed width */
-  height: 600px;
+  width: 100%;   /* IMPORTANT - fixed width */
+  height: 100%;
   flex-shrink: 0;
   padding: 15px;
 }
@@ -72,7 +69,7 @@ body {
 }
 
 .header p {
-  font-size: 14px;
+  font-size: 15px;
   margin-top: 5px;
 }
 
@@ -118,7 +115,7 @@ body {
 }
 
 .content p {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.3;
   margin-bottom: 6px;
 }
