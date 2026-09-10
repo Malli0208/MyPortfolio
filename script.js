@@ -6,7 +6,7 @@ const dots = document.querySelectorAll(".dot");
 function update() {
   const pageWidth = document.querySelector(".wrapper").clientWidth;
 
-  slider.style.transform = `translateX(-${index * pageWidth}px)`;
+  slider.style.transform = `translateX(-${index * 100}%)`;
 
   dots.forEach(dot => dot.classList.remove("active"));
   dots[index].classList.add("active");
