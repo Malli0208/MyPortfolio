@@ -1,29 +1,21 @@
 let index = 0;
 
-const slider = document.getElementById("slider");
-const dots = document.querySelectorAll(".dot");
+function goTo(page) {
+  index = page;
+  updateSlider();
+}
 
-function update() {
-  const pageWidth = document.querySelector(".wrapper").clientWidth;
-
+function updateSlider() {
+  const slider = document.getElementById("slider");
   slider.style.transform = `translateX(-${index * 100}%)`;
-
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
 }
 
 function next() {
-  if (index < 5) {
-    index++;
-    update();
-  }
+  index++;
+  updateSlider();
 }
 
 function prev() {
-  if (index > 0) {
-    index--;
-    update();
-  }
+  index--;
+  updateSlider();
 }
-
-window.onload = update;
