@@ -14,6 +14,33 @@
 <div class="wrapper">
   <div class="container" id="slider">
 
+    <!-- PAGE 0 -->
+    <div class="page">
+      <div class="card landing">
+
+        <div class="hero">
+          <div class="profile-section">
+            <img src="images/passportphoto.jpg" class="passport">
+            <h1>Cheela Mallikarjun Reddy</h1>
+            <p class="role">Aspiring Data Scientist</p>
+
+          </div>
+          <p class="tagline">
+            "Turning data into decisions that actually matter."
+          </p>
+        </div>
+
+        <div class="nav-buttons">
+          <button onclick="goTo(1)">About Me</button>
+          <button onclick="goTo(2)">Contact Information</button>
+          <button onclick="goTo(3)">Education & Skills</button>
+          <button onclick="goTo(4)">Experience</button>
+          <button onclick="goTo(5)">Projects</button>
+          <button onclick="goTo(7)">MyResume</button>
+        </div>
+      </div>
+    </div>
+
     <!-- PAGE 1 -->
     <div class="page">
       <div class="card doc">
@@ -28,7 +55,7 @@
         <div class="content">
           <h2>About Me</h2>
           <p>
-            I am <strong>Cheela Mallikarjun Reddy</strong>, an aspiring Data Analyst passionate about working with data to uncover insights and solve real-world problems.
+            I am <strong>Cheela Mallikarjun Reddy</strong>, an aspiring Data Scientist passionate about working with data to uncover insights and solve real-world problems.
           </p>
 
           <p>
@@ -41,6 +68,8 @@
         </div>
 
         <div class="footer">
+          <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
           <button onclick="next()">Next</button>
         </div>
       </div>
@@ -56,7 +85,7 @@
           <div class="profile-section">
             <img src="images/passportphoto.jpg" class="passport">
             <h2>Cheela Mallikarjun Reddy</h2>
-            <p>Aspiring Data Analyst</p>
+            <p>Aspiring Data Scientist</p>
           </div>
 
           <h3>Contact</h3>
@@ -73,6 +102,7 @@
 
         <div class="footer">
           <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
           <button onclick="next()">Next</button>
         </div>
 
@@ -86,27 +116,42 @@
 
         <div class="content">
           <h2>Education</h2>
-          <p><strong>🏛️ Sreenidhi Institute of Science and Technology, Hyderabad</strong></p>
-          <li>🎓 Bachelor of Technology</li>
-          <li>📚 Electronics and Communication Engineering</li>
-          <li>🧮 CGPA: 7.68</li>
+          <div class="edu-item">
+          <span class="icon">🏛️</span>
+          <span class="text">
+            <strong>Sreenidhi Institute of Science and Technology, Hyderabad</strong>
+          </span>
+        </div>
+          <ul class="no-bullets">
+            <li>🎓 Bachelor of Technology</li>
+            <li>📚 Electronics and Communication Engineering</li>
+            <li>🧮 CGPA: 7.68</li>
+          </ul>
 
           <h2>Skills</h2>
 
           <p><strong>Technical Skills</strong></p>
           <ul>
-            <li><strong>Programming Languages</strong>: HTML, CSS, JavaScript, Python (Pandas, NumPy)</li>
-            <li><strong>Database</strong>: SQL<strong>(MYSQL)</strong> (Joins, Aggregations, Queries)</li>
-            <li><strong>Spreadsheet</strong>: Excel (Pivot Tables, Data Cleaning)</li>
-            <li><strong>Business Intelligence</strong>: Power BI and Tableau (Dashboards, DAX, Data Modeling)</li>
-            <li><strong>Analysis</strong>: Data Analysis(Data Cleaning and Visualization)</li>
+            <li><strong>Programming Languages</strong>: Python, HTML, CSS, JavaScript, Embedded C, C</li>
+            <li><strong>Databases</strong>: SQL, Firebase Realtime Database, Relational Databases</li>
+            <li><strong>Dashboards</strong>:  Power BI and Tableau</li>
+            <li><strong>Tools used</strong>: VS Code, MySQL, SQLite, Excel, NumPy, Pandas, Matplotlib, Git & GitHub</li>
+            <li><strong>Analysis</strong>: Data Visualization, Data Analysis</li>
           </ul>
-          <p><strong>Other Skills</strong>: <li>Communication, Teamwork, Problem Solving</li></p>
+          <p><strong>Other Skills</strong>:</p>
+          <ul>
+            <li>Artificial Intelligence</li>
+            <li>Generative AI(ChatGPT, Gemini, Claude)</li>
+            <li>Communication</li>
+            <li>Teamwork</li>
+            <li>Problem Solving</li>
+          </ul>
 
         </div>
 
         <div class="footer">
           <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
           <button onclick="next()">Next</button>
         </div>
 
@@ -142,6 +187,7 @@
 
         <div class="footer">
           <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
           <button onclick="next()">Next</button>
         </div>
 
@@ -177,6 +223,7 @@
             <li>Used Pandas & NumPy for analysis</li>
             <li>Created DAX KPIs for performance tracking</li>
             <li>Visualized returns, risk metrics, and portfolio trends</li>
+            <li><strong>Tools Used:</strong> Vs Code, NumPy, Pandas, MySQL, Excel, PowerBI</li>
             </ul>
           </div>
 
@@ -197,6 +244,7 @@
               <li>Built multiple investment strategy presets such as Quality, Growth, Value, Dividend, and Debt-Free</li>
               <li>Integrated data pipeline using SQLite and Pandas for automated filtering and processing</li>
               <li>Generated sector-wise insights and exported results to Excel for analysis</li>
+              <li><strong>Tools Used:</strong> Vs Code, NumPy, Pandas, MySQL, Excel, PowerBI</li>
             </ul>
           </div>
 
@@ -204,9 +252,9 @@
 
         <div class="footer">
           <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
           <button onclick="next()">Next</button>
         </div>
-
       </div>
     </div>
      
@@ -230,7 +278,53 @@
             <li>Built Power BI dashboards for player stats & win ratios</li>
             <li>Performed EDA to identify trends like toss impact & venue advantage</li>
             <li>Visualized strike rates, runs, and match-winning patterns</li>
+            <li><strong>Tools Used:</strong> Vs Code, SQLite, Excel, PowerBI</li>
           </ul>
+          <h2>Academic Project</h2>
+          <p><strong>Secure Smart Electronic Voting System using Multi-Factor Authentication</strong></p>
+          <ul>
+            <li>Designed a multi-factor authentication system integrating biometric verification, keypad PINs, and GSM-based OTP.</li>
+            <li>Configured Firebase Realtime Database for live cloud tracking with strict verification and single-vote enforcement.</li>
+            <li>Conducted end-to-end testing and documented complete system workflows, flowcharts, and technical specifications.</li>
+            <li><strong>Tools Used:</strong> ESP32, Firebase, IoT, System Design</li>
+          </ul>
+        </div>
+
+        <div class="footer">
+          <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
+          <button onclick="next()">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 7 (RESUME) -->
+    <div class="page">
+      <div class="card doc">
+
+        <div class="header">
+          <h2>My Resume</h2>
+        </div>
+
+        <div class="content" style="text-align:center;">
+
+          <!-- Resume Image -->
+          <iframe 
+            src="resume.pdf" 
+            width="100%" 
+            height="400px" 
+            style="border: none; border-radius: 8px;">
+          </iframe>
+
+          <p style="text-align:center; margin-top:10px;">
+            <a href="resume.pdf" target="_blank">📄 View Full Resume</a>
+          </p>
+
+          <!-- Download Button -->
+          <a href="resume.pdf" download>
+            <button style="margin-top:15px;">Download Resume</button>
+          </a>
+
         </div>
 
         <div class="note-box">
@@ -238,20 +332,12 @@
         </div>
         <div class="footer">
           <button onclick="prev()">Previous</button>
+          <button class="home-btn" onclick="goTo(0)">Home</button>
         </div>
+
       </div>
     </div>
   </div>
-  <!-- DOTS -->
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-
 </div>
 
 <script src="script.js"></script>
