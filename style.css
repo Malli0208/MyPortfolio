@@ -6,43 +6,50 @@
 }
 
 /* BODY */
-body {
-  background: #f5f5f5;
-  margin: 0;
-}
-
 html, body {
   width: 100%;
-  overflow-x: hidden;
+  height: 100%;
+  background: #f5f5f5;
+  overflow: hidden; /* 🔥 prevent double scroll */
 }
 
-/* WRAPPER (A4 LOOK) */
+/* WRAPPER */
 .wrapper {
+  height: 100vh;
   width: 100%;
   max-width: 420px;
-  height: 100vh;
   margin: auto;
   overflow: hidden;
   position: relative;
-  border-radius: 10px;
-  touch-action: pan-y;
 }
 
-/* SLIDER CONTAINER */
+/* REELS CONTAINER */
 .container {
-  display: flex;
-  width: 100%; /* 8 pages */
-  height: 100%;
-  transition: transform 0.3s ease;
-  will-change: transform;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  /* hide scrollbar */
+  scrollbar-width: none;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
 }
 
 /* EACH PAGE */
 .page {
-  width: 100%;   /* IMPORTANT - fixed width */
-  height: 100%;
-  flex-shrink: 0;
-  padding: 15px;
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always; /* 🔥 reel snap lock */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 /* CARD */
@@ -67,70 +74,76 @@ html, body {
 .header {
   text-align: center;
   margin-bottom: 15px;
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .header h1 {
-  font-size: 24px;
-  line-height: 1.2;
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.header h2 {
+  color: #098eed;
 }
 
 .header p {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 5px;
 }
 
-/* BANNER IMAGE */
+/* IMAGE */
 .banner-img {
   width: 100%;
   height: 140px;
   object-fit: cover;
   border-radius: 10px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
-/* PASSPORT IMAGE */
+/* PASSPORT */
 .passport {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 10px;
 }
 
-/* PROFILE SECTION */
+/* PROFILE */
 .profile-section {
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* CONTENT */
 .content {
   flex: 1;
-  overflow-y: auto;  /* allow scroll */
+  overflow-y: auto; /* only inner scroll */
   padding-right: 5px;
-  touch-action: pan-y;
 }
 
+/* TEXT */
 .content h2 {
-  font-size: 18px;
+  font-size: 17px;
   margin-bottom: 6px;
+  
 }
 
 .content h3 {
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 8px;
+  color: #040f74;
 }
 
 .content p {
-  font-size: 15px;
-  line-height: 1.3;
+  font-size: 14px;
+  line-height: 1.4;
   margin-bottom: 6px;
 }
 
 .content li {
-  font-size: 12px;
-  line-height: 1.3;
+  font-size: 13px;
+  line-height: 1.4;
   margin-bottom: 4px;
 }
 
@@ -144,53 +157,25 @@ ul {
 .footer {
   display: flex;
   justify-content: center;
-  gap: 10px;
   border-top: 1px solid #ddd;
   padding-top: 10px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 button {
-  padding: 8px 20px;
-  min-width: 100px;
+  padding: 8px 18px;
   border: none;
   background: linear-gradient(135deg, #d4af37, #ffd700);
   color: #000;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  touch-action: manipulation;
-}
-
-button:hover {
-  background: linear-gradient(135deg, #b8962e, #e6c200);
 }
 
 /* LINKS */
 a {
   color: #117328;
   text-decoration: none;
-}
-
-/* DOT NAVIGATION */
-.dots {
-  position: absolute;
-  bottom: 5px;
-  width: 100%;
-  text-align: center;
-}
-
-.dot {
-  height: 8px;
-  width: 8px;
-  margin: 4px;
-  background: gray;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.active {
-  background: black;
 }
 
 /* NOTE BOX */
@@ -203,122 +188,56 @@ a {
   padding: 6px 10px;
   font-size: 11px;
   border-radius: 6px;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-.note-box span {
-  color: #28a745;
-  font-weight: 600;
-}
-
-/* MOBILE FIX (FULL WIDTH) */
-@media (max-width: 480px) {
-
-  body {
-    height: auto;
-  }
-
-  .wrapper {
-    max-width: 100%;
-    width: 100%;
-    height: 100vh;
-    border-radius: 0;
-  }
-
-  .page {
-    width: 100%;   /* ONLY here */
-    height: 100vh;
-    padding: 10px;
-  }
-
-  .card {
-    height: 100%;
-  }
-
-  .content {
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch; /* smooth iPhone scroll */
-  }
-
-}
-
+/* LANDING PAGE */
 .landing {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   text-align: center;
-  background: linear-gradient(135deg, #c0c0c0, #f5f5f5, #d9d9d9);
-  color: #000;
-  box-shadow: inset 0 0 20px rgba(255,255,255,0.5);
 }
 
 .hero h1 {
-  font-size: 26px;
-  font-weight: 700;
+  font-size: 24px;
 }
 
 .role {
-  font-size: 16px;
-  margin: 5px 0;
+  font-size: 15px;
   color: #007bff;
 }
 
 .tagline {
-  font-size: 14px;
-  margin: 15px 0;
+  font-size: 13px;
+  margin: 12px 0;
   color: #555;
 }
 
-/* buttons container */
+/* NAV BUTTONS */
 .nav-buttons {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
   margin-top: 20px;
 }
 
-/* buttons */
 .nav-buttons button {
   padding: 10px;
-  border: none;
   border-radius: 8px;
   background: linear-gradient(45deg, #007bff, #00c6ff);
   color: white;
-  font-weight: 500;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.nav-buttons button:hover {
-  transform: scale(1.05);
-}
-
+/* HOME BUTTON */
 .home-btn {
   background: linear-gradient(135deg, #c0c0c0, #e6e6e6);
   color: #000;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
-.home-btn:hover {
-  background: linear-gradient(135deg, #a9a9a9, #d3d3d3);
-}
-
+/* EDUCATION */
 .edu-item {
   display: flex;
-  align-items: flex-start;
   gap: 8px;
-}
-
-.edu-item .icon {
-  min-width: 20px;
-}
-
-.edu-item .text {
-  display: block;
 }
 
 .no-bullets {
@@ -326,7 +245,93 @@ a {
   padding-left: 0;
 }
 
-.no-bullets li {
-  margin-bottom: 6px;
-  font-size: 13px;
+/* 🔥 CLOCK */
+.clock {
+  width: 120px;
+  height: 120px;
+  border: 5px solid #000;
+  border-radius: 50%;
+  margin: 15px auto;
+  position: relative;
+  background: white;
 }
+
+/* hands */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+/* hour */
+.hour {
+  width: 4px;
+  height: 30px;
+  background: black;
+}
+
+/* minute */
+.minute {
+  width: 3px;
+  height: 40px;
+  background: black;
+}
+
+/* second */
+.second {
+  width: 2px;
+  height: 45px;
+  background: red;
+}
+
+/* center dot */
+.center-dot {
+  width: 8px;
+  height: 8px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* CLOCK NUMBERS */
+.number {
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  color: black;
+}
+
+/* positions */
+.n12 {
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.n3 {
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.n6 {
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.n9 {
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+
+
+
