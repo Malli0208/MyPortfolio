@@ -4,7 +4,7 @@ const container = document.querySelector(".container");
 const pages = document.querySelectorAll(".page");
 const totalPages = pages.length;
 
-// ✅ BUTTON NAVIGATION (FIXED)
+//  BUTTON NAVIGATION (FIXED)
 function goTo(index) {
   if (index < 0 || index >= totalPages) return;
 
@@ -16,7 +16,7 @@ function goTo(index) {
   });
 }
 
-// ✅ TOUCH SWIPE (VERTICAL)
+//  TOUCH SWIPE (VERTICAL)
 let startY = 0;
 let endY = 0;
 
@@ -43,7 +43,7 @@ function handleSwipe() {
   }
 }
 
-// ✅ SCROLL TRACKING (FIXED)
+//  SCROLL TRACKING (FIXED)
 container.addEventListener("scroll", () => {
   let scrollPos = container.scrollTop;
 
@@ -54,7 +54,7 @@ container.addEventListener("scroll", () => {
   });
 });
 
-// 🔥 ANALOG CLOCK
+//  ANALOG CLOCK
 function updateClock() {
   const now = new Date();
 
